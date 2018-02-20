@@ -6,6 +6,29 @@
     <link href="estilos.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
+<style>
+#div1 {
+    width: 350px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));   ev.dataTransfer.setDragImage(ev.target,100,100);
+   return true;
+}
+function dragEnter(ev) {
+   ev.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    ev.preventDefault();
+}
+
+</script>
 <body>
 	<!--<div id="capa">-->
 		<header>
@@ -42,33 +65,39 @@
 		</h1>
 		<section>
 			<article>
-			<br>
-			<br>
-			<b> Es una anime serie de ciencia ficción que cuenta la historia de Satory Fujinuma, un autor de manga sin mucho éxito que sufre de un peculiar fenómeno conocido como Resucitación ver Boku Dake Ga Inai Machi 2016 en el cual se transporta a la fuerza atrás ver Boku Dake Ga Inai Machi 2016 en el tiempo hasta el momento anterior de que ocurra algo que supone un peligro para una vida. Satoru no tarda ver Boku Dake Ga Inai Machi 2016 en descubrir que el fenómeno persiste hasta que la causa de la amenaza desaparece. </b>
-                    <br>
-		   <br>
+				<br>
+				<br>
+				<b> Es una anime serie de ciencia ficción que cuenta la historia de Satory Fujinuma, un autor de manga sin mucho éxito que sufre de un peculiar fenómeno conocido como Resucitación ver Boku Dake Ga Inai Machi 2016 en el cual se transporta a la fuerza atrás ver Boku Dake Ga Inai Machi 2016 en el tiempo hasta el momento anterior de que ocurra algo que supone un peligro para una vida. Satoru no tarda ver Boku Dake Ga Inai Machi 2016 en descubrir que el fenómeno persiste hasta que la causa de la amenaza desaparece. </b>
+	                    <br>
+			   <br>
                 <video src="Video/BD_1.mp4" width="720" height="404" controls 
                 	poster="Images/BD.jpg"
                     loop
                     autoplay
                 ></video>
                 <br>
-		<b>Ráfagas ante mis ojos<b/>
-		<br>
+				<b>Ráfagas ante mis ojos<b/>
+				<br>
+				<a href="Video/BD_1.mp4" download>Descargar Capitulo 1</a>
+				<br>
                 <video src="Video/BD_2.mp4" width="720" height="404" controls 
                 	poster="Images/BD.jpg"
                     loop
                 ></video>
                 <br>
-		<b>Palmas</b>
-		<br>
+				<b>Palmas</b>
+				<br>
+				<a href="Video/BD_2.mp4" download>Descargar Capitulo 2</a>
+				<br>
                 <video src="Video/BD_3.mp4" width="720" height="404" controls 
                 	poster="Images/BD.jpg"
                     loop
                 ></video>
-		<br>
-		<b>Moratones</b>
-		<br>
+				<br>
+				<b>Moretones</b>
+				<br>
+				<a href="Video/BD_3.mp4" download>Descargar Capitulo 3</a>
+				<br>
             </article>
 		</section>
 		<aside id="der">
@@ -83,6 +112,7 @@
 		</aside>
 		<footer>
 			<b>UAA 2018 todos los derechos reservados :v </b>
+			<div id="div1" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
 		</footer>
 	<!--</div>-->
 </body>

@@ -6,6 +6,28 @@
     <link href="estilos.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
+<style>
+#div1 {
+    width: 350px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));   ev.dataTransfer.setDragImage(ev.target,100,100);
+   return true;
+}
+function dragEnter(ev) {
+   ev.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    ev.preventDefault();
+}
+</script>
 <body>
 	<!--<div id="capa">-->
 		<header>
@@ -43,23 +65,29 @@
 		<section>
 			<article>
                     <br><br>
-		<b>En un mundo en el que existen duelos entre híbridos de seres humanos y distintos animales, el estudiante universitario Nomoto Yuya se ve envuelto en una terrible situación: unos conocidos le obligan a acompañarlos a secuestrar a una chica. Sin embargo, la joven es una híbrido de tejón de la miel, un animal de lo más feroz, y no duda en defenderse y matarlos a todos, menos al pobre Yuya. De este modo, los dos forjarán una extraña amistad y Hitomi se quedará al lado de Yuya para protegerlo. </b>
-		<br><br>
+					<b>En un mundo en el que existen duelos entre híbridos de seres humanos y distintos animales, el estudiante universitario Nomoto Yuya se ve envuelto en una terrible situación: unos conocidos le obligan a acompañarlos a secuestrar a una chica. Sin embargo, la joven es una híbrido de tejón de la miel, un animal de lo más feroz, y no duda en defenderse y matarlos a todos, menos al pobre Yuya. De este modo, los dos forjarán una extraña amistad y Hitomi se quedará al lado de Yuya para protegerlo. </b>
+					<br><br>
                 <video src="Video/KB_1.mp4" width="720" height="404" controls 
                 	poster="Images/KB.jpg"
                     loop
                     autoplay
                 ></video>
                 <br>
+				<a href="Video/KB_1.mp4" download>Descargar Capitulo 1</a>
+                <br>
                 <video src="Video/KB_2.mp4" width="720" height="404" controls 
                 	poster="Images/KB.jpg"
                     loop
                 ></video>
                 <br>
+				<a href="Video/KB_2.mp4" download>Descargar Capitulo 2</a>
+                <br>
                 <video src="Video/KB_3.mp4" width="720" height="404" controls 
                 	poster="Images/KB.jpg"
                     loop
                 ></video>
+                <br>
+				<a href="Video/KB_3.mp4" download>Descargar Capitulo 3</a>
             </article>
 		</section>
 		<aside id="der">
@@ -74,6 +102,7 @@
 		</aside>
 		<footer>
 			<b>UAA 2018 todos los derechos reservados :v</b>
+			<div id="div1" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
 		</footer>
 	<!--</div>-->
 </body>

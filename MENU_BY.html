@@ -6,6 +6,28 @@
     <link href="estilos.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
+<style>
+#div1 {
+    width: 350px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));   ev.dataTransfer.setDragImage(ev.target,100,100);
+   return true;
+}
+function dragEnter(ev) {
+   ev.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    ev.preventDefault();
+}
+</script>
 <body>
 	<!--<div id="capa">-->
 		<header>
@@ -38,37 +60,42 @@
 		</table>
 		</header>
 		<h1 align=center>
-			Ballroom e youkoso
+			Ballroom e youkoso</h1>
 		<section>
 			<article>
-                    
-		<br>
-		<br>
-		<b>La historia de Ballroom e Youkoso se centra en el estudiante Tatara Fujita, que quiere ser bueno en algo, en cualquier cosa. Por desgracia, es tan mediocre como cualquier otro adolescente. Los matones del barrio lo saben y por eso aprovechan cualquier ocasión para sacarle dinero, pero esto cambia cuando el caballeroso Kaname Sengoku se encuentra con ellos y los echa. Sengoku resulta ser un bailarín de salón profesional y una vez que Tatara Fujita termina metido en el mundo de los bailes de salón, su vida nunca volverá a ser la misma. </b>
-		<br>
-		<br>
+                <br>
+				<br>
+				<b>La historia de Ballroom e Youkoso se centra en el estudiante Tatara Fujita, que quiere ser bueno en algo, en cualquier cosa. Por desgracia, es tan mediocre como cualquier otro adolescente. Los matones del barrio lo saben y por eso aprovechan cualquier ocasión para sacarle dinero, pero esto cambia cuando el caballeroso Kaname Sengoku se encuentra con ellos y los echa. Sengoku resulta ser un bailarín de salón profesional y una vez que Tatara Fujita termina metido en el mundo de los bailes de salón, su vida nunca volverá a ser la misma. </b>
+				<br>
+				<br>
                 <video src="Video/BY_1.mp4" width="720" height="404" controls 
                 	poster="Images/BY.jpg"
                     loop
                     autoplay
                 ></video>
                 <br>
-		<b> Bienvenido al Estudio de Baile Ogasawara</b>
-		<br>
+                <b> Bienvenido al Estudio de Baile Ogasawara</b>
+                <br>
+				<a href="Video/BY_1.mp4" download>Descargar Capitulo 1</a>
+				<br>
                 <video src="Video/BY_2.mp4" width="720" height="404" controls 
                 	poster="Images/BY.jpg"
                     loop
                 ></video>
                 <br>
-		<b>Kiyoharu Hyoudou</b>
-		<br>
+                <b>Kiyoharu Hyoudou</b>
+                <br>
+				<a href="Video/BY_2.mp4" download>Descargar Capitulo 2</a>
+				<br>
                 <video src="Video/BY_3.mp4" width="720" height="404" controls 
                 	poster="Images/BY.jpg"
                     loop
                 ></video>
-		<br>
-		<b>Baila el Vals</b>
-		<br>
+                <br>
+				<b>Baila el Vals</b>
+                <br>
+				<a href="Video/BY_3.mp4" download>Descargar Capitulo 3</a>
+				<br>
             </article>
 		</section>
 		<aside id="der">
@@ -82,7 +109,8 @@
 	 		</div>
 		</aside>
 		<footer>
-			<b>UAA 2018 todos los derechos reservados :v</b>	
+			<b>UAA 2018 todos los derechos reservados :v </b>
+			<div id="div1" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
 		</footer>
 	<!--</div>-->
 </body>

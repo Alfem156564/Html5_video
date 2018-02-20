@@ -6,6 +6,28 @@
     <link href="estilos.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
+<style>
+#div1 {
+    width: 350px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));   ev.dataTransfer.setDragImage(ev.target,100,100);
+   return true;
+}
+function dragEnter(ev) {
+   ev.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    ev.preventDefault();
+}
+</script>
 <body>
 	<!--<div id="capa">-->
 		<header>
@@ -43,30 +65,36 @@
 		<section>
 			<article>
                 <br><br>
-		<b>Suzuki Ichirou es un programador de 29 años que se encuentra en un “death march” (punto de no retorno) y que un día se despierta en un mundo diferente tras echarse una siesta. El protagonista gana grandes riquezas gracias a una lluvia de meteoros y decide irse de turismo. Así comienza su aventura “reconfortante, seria a ratos y harén” en el nuevo mundo. </b>
-		<br><br>
+				<b>Suzuki Ichirou es un programador de 29 años que se encuentra en un “death march” (punto de no retorno) y que un día se despierta en un mundo diferente tras echarse una siesta. El protagonista gana grandes riquezas gracias a una lluvia de meteoros y decide irse de turismo. Así comienza su aventura “reconfortante, seria a ratos y harén” en el nuevo mundo. </b>
+				<br><br>
                 <video src="Video/DMH_1.mp4" width="720" height="404" controls 
                 	poster="Images/DMH.jpg"
                     loop
                     autoplay
                 ></video>
                 <br>
-		<b>Desu machi kara hajimaru tenpenchii</b>
-		<br>
+				<b>Desu machi kara hajimaru tenpenchii</b>
+                <br>
+				<a href="Video/DMH_1.mp4" download>Descargar Capitulo 1</a>
+				<br>
                 <video src="Video/DMH_2.mp4" width="720" height="404" controls 
                 	poster="Images/DMH.jpg"
                     loop
                 ></video>
                 <br>
-		<b>Desu machi kara hajimaru ichi no sansaku</b>
-		<br>
+				<b>Desu machi kara hajimaru ichi no sansaku</b>
+                <br>
+				<a href="Video/DMH_2.mp4" download>Descargar Capitulo 2</a>
+				<br>
                 <video src="Video/DMH_3.mp4" width="720" height="404" controls 
                 	poster="Images/DMH.jpg"
                     loop
                 ></video>
-		<br>
-		<b>Desu machi kara hajimaru ren'ai jijou</b>
-		<br>
+				<br>
+				<b>Desu machi kara hajimaru ren'ai jijou</b>
+                <br>
+				<a href="Video/DMH_3.mp4" download>Descargar Capitulo 3</a>
+				<br>
             </article>
 		</section>
 		<aside id="der">
@@ -80,7 +108,8 @@
 	 		</div>
 		</aside>
 		<footer>
-			<b>UAA 2018 todos los derechos reservados :v</b>	
+			<b>UAA 2018 todos los derechos reservados :v</b>
+			<div id="div1" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
 		</footer>
 	<!--</div>-->
 </body>

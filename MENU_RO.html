@@ -6,6 +6,28 @@
     <link href="estilos.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
+<style>
+#div1 {
+    width: 350px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));   ev.dataTransfer.setDragImage(ev.target,100,100);
+   return true;
+}
+function dragEnter(ev) {
+   ev.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    ev.preventDefault();
+}
+</script>
 <body>
 	<!--<div id="capa">-->
 		<header>
@@ -43,28 +65,34 @@
 		<section>
 			<article>
                     <br><br>
-		<b> brí la puerta de enfrente y una estudiante de primaria estaba parada allí. “Como te lo prometí, he venido para ser tu discípulo”.
-Yaichi Kuzuryuu es el poseedor del título más poderoso del mundo del Shogi conocido como Ryuuou (El Rey Dragón). Esta estudiante del tercer grado que se ha invitado ella misma dentro de la casa de Yaichi es Ai Hinazuru y apenas tiene 9 años.
+					<b> brí la puerta de enfrente y una estudiante de primaria estaba parada allí. “Como te lo prometí, he venido para ser tu discípulo”.
+					Yaichi Kuzuryuu es el poseedor del título más poderoso del mundo del Shogi conocido como Ryuuou (El Rey Dragón). Esta estudiante del tercer grado que se ha invitado ella misma dentro de la casa de Yaichi es Ai Hinazuru y apenas tiene 9 años.
 
-“¿Qué? ¿Discípulo?”
-“... ¿no recuerdas?”
+					“¿Qué? ¿Discípulo?”
+					“... ¿no recuerdas?”
 
-Aunque él no recuerda, los días en los que Yaichi vivirá con una estudiante de primaria han comenzado. Con la ayuda de la pasión de ai, Yaichi comenzará a recuperar el fuego que se la apagado. </b>
+					Aunque él no recuerda, los días en los que Yaichi vivirá con una estudiante de primaria han comenzado. Con la ayuda de la pasión de ai, Yaichi comenzará a recuperar el fuego que se la apagado. </b>
                 <video src="Video/RO_1.mp4" width="720" height="404" controls 
                 	poster="Images/RO.jpg"
                     loop
                     autoplay
                 ></video>
                 <br>
+				<a href="Video/RO_1.mp4" download>Descargar Capitulo 1</a>
+                <br>
                 <video src="Video/RO_2.mp4" width="720" height="404" controls 
                 	poster="Images/RO.jpg"
                     loop
                 ></video>
                 <br>
+				<a href="Video/RO_2.mp4" download>Descargar Capitulo 2</a>
+                <br>
                 <video src="Video/RO_3.mp4" width="720" height="404" controls 
                 	poster="Images/RO.jpg"
                     loop
                 ></video>
+                <br>
+				<a href="Video/RO_3.mp4" download>Descargar Capitulo 3</a>
             </article>
 		</section>
 		<aside id="der">
@@ -79,6 +107,7 @@ Aunque él no recuerda, los días en los que Yaichi vivirá con una estudiante d
 		</aside>
 		<footer>
 			<b>UAA 2018 todos los derechos reservados :v </b>
+			<div id="div1" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
 		</footer>
 	<!--</div>-->
 </body>
