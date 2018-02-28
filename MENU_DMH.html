@@ -15,18 +15,24 @@
 }
 </style>
 <script>
-function dragStart(ev) {
-   ev.dataTransfer.effectAllowed='move';
-   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));   ev.dataTransfer.setDragImage(ev.target,100,100);
-   return true;
-}
-function dragEnter(ev) {
-   ev.preventDefault();
-   return true;
-}
-function dragOver(ev) {
-    ev.preventDefault();
-}
+	$(document).ready(function(){
+		if(sessionStorage.getItem("user") != null){
+			$(".user-section").replaceWith("<div class='sesion'>Bienvenido "+sessionStorage.getItem("user")+"</div>");
+			$(.login-button).html("Logout");
+		}
+	})
+	function dragStart(ev) {
+	   ev.dataTransfer.effectAllowed='move';
+	   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));   ev.dataTransfer.setDragImage(ev.target,100,100);
+	   return true;
+	}
+	function dragEnter(ev) {
+	   ev.preventDefault();
+	   return true;
+	}
+	function dragOver(ev) {
+	    ev.preventDefault();
+	}
 </script>
 <body>
 	<!--<div id="capa">-->
@@ -109,8 +115,11 @@ function dragOver(ev) {
 		</aside>
 		<footer>
 			<b>UAA 2018 todos los derechos reservados :v</b>
-			<div id="div1" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+			<div id="div1" class="sesion" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
 		</footer>
 	<!--</div>-->
+	<script src="https://ajax.googleaapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap,min.js"></script>
 </body>
 </html>
